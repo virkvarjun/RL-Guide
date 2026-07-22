@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/*
+ * Design system measured from arjunvirk.com/writing/ml-guide.
+ * Tufte / et-book: serif everywhere (headings, body, even "mono" labels),
+ * warm off-white page, single 672px reading column.
+ */
+
+@font-face {
+  font-family: "et-book";
+  src: url("/fonts/et-book/et-book-roman-line-figures.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("/fonts/et-book/et-book-display-italic-old-style-figures.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("/fonts/et-book/et-book-bold-line-figures.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "et-book", Palatino, Georgia, serif;
+  --font-mono: "et-book", Palatino, Georgia, serif;
+}
+
+:root {
+  --background: #fafaf8;
+  --foreground: #111;
+  --muted: #6b7280;
+  --border: #e5e5e3;
+  --card: #f4f4f2;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: et-book, Palatino, Georgia, serif;
+}
+
+/* ------------------------------------------------------------------ */
+/* Code — real monospace inside code contexts (the et-book "font-mono" */
+/* alias is only for small-caps-style labels, per the live site).      */
+/* ------------------------------------------------------------------ */
+
+pre,
+pre code,
+.code-inline {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+    monospace;
+}
+
+pre {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.875rem 1rem;
+  overflow-x: auto;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+}
+
+/* rehype-pretty-code emits data-line spans */
+pre [data-line] {
+  padding: 0;
+}
+
+code[data-theme],
+code[data-theme] span {
+  color: var(--shiki-light, inherit);
+}
+
+.code-inline {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+  font-size: 0.8em;
+}
+
+/* ------------------------------------------------------------------ */
+/* KaTeX                                                                */
+/* ------------------------------------------------------------------ */
+
+.katex {
+  font-size: 1.06em;
+}
+
+.katex-display {
+  margin: 1.1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.15rem 0;
+}
+
+.katex-display > .katex {
+  font-size: 1.12em;
+}
+
+/* ------------------------------------------------------------------ */
+/* Tables                                                               */
+/* ------------------------------------------------------------------ */
+
+.prose-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.prose-table th {
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid var(--foreground);
+  padding: 0.4rem 0.75rem 0.4rem 0;
+}
+
+.prose-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.4rem 0.75rem 0.4rem 0;
+  vertical-align: top;
+}
