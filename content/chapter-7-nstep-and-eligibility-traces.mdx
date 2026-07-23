@@ -200,9 +200,9 @@ Output (100 runs, 10 episodes each): $n=1$ lands at RMS error 0.21 (best α = 0.
 
 **7.6 (derive)** Show that TD(1) with accumulating traces, applied offline, produces exactly the every-visit Monte Carlo updates (γ = 1 case). Where does the correspondence pick "every-visit" over "first-visit," and what trace variant would you need for first-visit behavior? (Cross-check with Singh & Sutton 1996.)
 
-**7.7 (implement)** Extend the random-walk code to (a) offline λ-return updates and (b) online TD(λ) with accumulating traces. Sweep λ ∈ {0, 0.4, 0.8, 0.9, 0.95, 1} × α and reproduce the U-shape. How closely does TD(λ) track the offline λ-return at small vs. large α? (You are measuring the stale-value approximation directly.)
+**7.7 (implement)** Extend the random-walk code to (a) offline λ-return updates and (b) online TD(λ) with accumulating traces. Sweep λ ∈ $\{0, 0.4, 0.8, 0.9, 0.95, 1\}$ × α and reproduce the U-shape. How closely does TD(λ) track the offline λ-return at small vs. large α? (You are measuring the stale-value approximation directly.)
 
-**7.8 (implement)** Implement SARSA(λ) on cliff walking (Chapter 6's environment) with λ ∈ {0, 0.5, 0.9}. Compare episodes-to-solve against one-step SARSA and visualize, after the *first* successful episode, which state–action values changed — the exponential credit fade made visible.
+**7.8 (implement)** Implement SARSA(λ) on cliff walking (Chapter 6's environment) with λ ∈ $\{0, 0.5, 0.9\}$. Compare episodes-to-solve against one-step SARSA and visualize, after the *first* successful episode, which state–action values changed — the exponential credit fade made visible.
 
 **7.9 (implement)** Implement Watkins' Q(λ) (cut traces at non-greedy actions) and naive Q(λ) (don't cut) on cliff walking with ε = 0.1. Compare final policies and stability, and explain any naive-Q(λ) bias you detect in terms of Section 2's uncorrected-return discussion.
 

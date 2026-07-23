@@ -167,7 +167,7 @@ The signature result: achieved return *tracks the prompt* — conditioning on 10
 
 **18.5 (derive)** Diffusion guidance: starting from the reverse-process mean update of DDPM, show that adding $\sigma_t^2 \nabla_\tau J(\tau)$ (gradient of a return model) to each denoising step targets the tilted distribution $\tilde p(\tau) \propto p(\tau) e^{J(\tau)}$ to first order — and explain why the *data-distribution prior* term is doing Chapter 17's "stay in support" work automatically.
 
-**18.6 (implement)** Run the Section 7 code. Plot achieved-vs-prompted return across prompts {50, 100, ..., 700}; identify the tracking region and the ceiling. Then bias the dataset: drop all episodes with return above 300 and retrain — where does the ceiling move? (You are measuring the "no competence conjured" claim directly.)
+**18.6 (implement)** Run the Section 7 code. Plot achieved-vs-prompted return across prompts $\{50, 100, \dots, 700\}$; identify the tracking region and the ceiling. Then bias the dataset: drop all episodes with return above 300 and retrain — where does the ceiling move? (You are measuring the "no competence conjured" claim directly.)
 
 **18.7 (implement)** Add stochasticity: with probability 0.15 per step, the environment ignores the chosen action and applies a random one (and this is *not* recorded in the dataset). Retrain the return-conditioned policy and a Double-DQN on the same buffer (Chapter 17's harness). Compare achieved returns and verify the predicted separation. Then log what the conditioned policy does in states where lucky trajectories dominated — find one concrete superstition.
 

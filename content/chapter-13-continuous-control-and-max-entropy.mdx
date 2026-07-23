@@ -250,7 +250,7 @@ A working decision rule, honest to current practice. **PPO** (Chapter 12): inter
 
 **13.6 (derive)** Derive the tanh log-density correction from the change-of-variables formula, including the numerically stable form $\log\left(1 - \tanh^2 u\right) = 2\left( \log 2 - u - \mathrm{softplus}(-2u) \right)$ used in production implementations (why is the naive form dangerous at large u?). Then justify the entropy-target heuristic: for a d-dimensional squashed Gaussian, why is $-d$ a sensible floor?
 
-**13.7 (implement)** Run the SAC code; plot returns and α over training. Then ablate over 5 seeds each: (a) single critic instead of the min; (b) fixed α ∈ {0.05, 0.2, 1.0} instead of auto-tuning; (c) no tanh Jacobian correction. Match each degradation to its mechanism.
+**13.7 (implement)** Run the SAC code; plot returns and α over training. Then ablate over 5 seeds each: (a) single critic instead of the min; (b) fixed α ∈ $\{0.05, 0.2, 1.0\}$ instead of auto-tuning; (c) no tanh Jacobian correction. Match each degradation to its mechanism.
 
 **13.8 (implement)** Implement TD3 by modifying your SAC code (deterministic actor + behavior noise σ = 0.1, target smoothing σ = 0.2 clipped at 0.5, delay d = 2, no entropy anywhere). Compare TD3 vs. SAC on Pendulum and on a sparse-reward variant (reward only when the pole is within 0.1 rad of upright): which gap widens, and why does the max-ent objective predict that?
 

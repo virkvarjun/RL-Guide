@@ -280,7 +280,7 @@ Three escapes structure the rest of the book: **sampling** — visit states the 
 
 **4.5 (derive)** Show that $\mathcal{T}^*$ is *monotone*: if $V \le W$ componentwise then $\mathcal{T}^* V \le \mathcal{T}^* W$. Then show that if $V \le \mathcal{T}^* V$ (a "pessimistic, improvable" function), the iterates increase monotonically to $V^*$. Monotonicity + contraction is the pair of properties that all of approximate DP theory (Chapter 21) tries to preserve; knowing why they matter separately is worth the exercise.
 
-**4.6 (implement)** Instrument the value-iteration code to record $\| V_k - V^* \|_\infty$ per sweep (compute $V^*$ first with a tiny θ). Rerun the same gridworld with a $-1$-per-step reward but γ ∈ {0.5, 0.9, 0.99} (note γ below 1 changes the optimal values — recompute each $V^*$). Plot log-error vs. sweep and read off the slope: does it match $\log \gamma$?
+**4.6 (implement)** Instrument the value-iteration code to record $\| V_k - V^* \|_\infty$ per sweep (compute $V^*$ first with a tiny θ). Rerun the same gridworld with a $-1$-per-step reward but γ ∈ $\{0.5, 0.9, 0.99\}$ (note γ below 1 changes the optimal values — recompute each $V^*$). Plot log-error vs. sweep and read off the slope: does it match $\log \gamma$?
 
 **4.7 (implement)** Solve **Jack's car rental** (Sutton & Barto Example 4.2: two lots, Poisson demand, moving cars overnight costs $2, γ = 0.9) with policy iteration. Reproduce the sequence of policies; it converges in about 4 improvement rounds. This is the smallest problem where you can *feel* the evaluation cost dominating.
 

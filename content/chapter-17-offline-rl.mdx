@@ -187,7 +187,7 @@ The diagnostic to internalize is the *pair* of numbers, and here they are stark 
 
 **17.5 (derive)** MOPO's penalty: given a model with true-vs-learned dynamics gap bounded by $u(s,a)$ in total variation, and rewards bounded by $R_{\max}$, sketch why penalizing synthetic rewards by $\lambda u$ with $\lambda = \gamma R_{\max}/(1-\gamma)$ makes the model-MDP's value a lower bound on the true value (telescoping the simulation lemma). What does this bound become when the ensemble's uncertainty is *miscalibrated* (u underestimates the true gap)?
 
-**17.6 (implement)** Run the Section 8 experiment over 5 seeds; tabulate mean max-Q and greedy return for bc_weight ∈ {0, 0.1, 1, 10}. You should recover the full arc: divergence-flavored inflation at 0, the sweet spot near 1, and BC-like timidity at 10 (compare against pure BC's return on the same buffer). Plot return vs. the *dataset's* behavior-policy return line.
+**17.6 (implement)** Run the Section 8 experiment over 5 seeds; tabulate mean max-Q and greedy return for bc_weight ∈ $\{0, 0.1, 1, 10\}$. You should recover the full arc: divergence-flavored inflation at 0, the sweet spot near 1, and BC-like timidity at 10 (compare against pure BC's return on the same buffer). Plot return vs. the *dataset's* behavior-policy return line.
 
 **17.7 (implement)** Implement discrete IQL for the same buffer: expectile-V (τ = 0.8), SARSA-Q, advantage-weighted policy extraction (β = 3). Compare to the bc_weight = 1 constrained FQI on: final return, mean max-Q sanity, and — the interesting one — robustness when you *shrink the dataset* to 2k transitions. Which method's failure is noisier, and why does the in-sample property predict that?
 

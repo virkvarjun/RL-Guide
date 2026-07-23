@@ -208,7 +208,7 @@ The signature you should see: BC from 200 steps is mediocre; even from 1,000–5
 
 **16.7 (implement)** Run the Section 7 code, 10 seeds. Report the variance of BC-5000 vs. DAgger-1000. Then instrument the *drift itself*: record the distribution of pole angles visited by the expert vs. each learner; plot histograms. The BC learner's histogram should be visibly wider — you are looking at covariate shift directly.
 
-**16.8 (implement)** Implement DART for the same setup: collect 1,000 expert-labeled steps while injecting ε-random actions into the expert's *execution* (the expert still labels its intended action). Sweep injection rate ∈ {0, 0.1, 0.3, 0.5} and compare to BC and DAgger. Explain the U-shape you find in terms of coverage vs. label distribution corruption.
+**16.8 (implement)** Implement DART for the same setup: collect 1,000 expert-labeled steps while injecting ε-random actions into the expert's *execution* (the expert still labels its intended action). Sweep injection rate ∈ $\{0, 0.1, 0.3, 0.5\}$ and compare to BC and DAgger. Explain the U-shape you find in terms of coverage vs. label distribution corruption.
 
 **16.9 (implement)** Multimodality minicase: modify the expert to randomly commit, per episode, to "lean recovery left" vs. "lean recovery right" (two valid strategies distinguishable only by history). Train (a) a unimodal Gaussian BC policy on the *continuous* action interpretation and (b) a categorical policy. Demonstrate the mean-collapse failure of (a) and explain which pitfall-section entry you have reproduced. (Keep this experiment in mind for Diffusion Policy, Chapter 24.)
 

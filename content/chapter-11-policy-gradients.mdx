@@ -246,7 +246,7 @@ The entropy bonus $\beta \mathcal{H}$ (typically β ≈ 0.01) is the policy-side
 
 **11.7 (implement)** Run the REINFORCE code with and without the baseline, 10 seeds each. Plot mean ± interquartile return curves, and separately plot the empirical variance of the per-episode policy-gradient norm. Confirm the baseline's variance reduction and quantify it.
 
-**11.8 (implement)** Convert the REINFORCE code to the batched A2C chassis (N = 2048 steps per batch, GAE λ = 0.95, entropy β = 0.01, advantage normalization) and compare wall-clock and episode-efficiency against REINFORCE on CartPole and Acrobot. Then sweep λ ∈ {0, 0.5, 0.9, 0.95, 1.0} and plot final performance — reproduce the GAE paper's qualitative U-shape.
+**11.8 (implement)** Convert the REINFORCE code to the batched A2C chassis (N = 2048 steps per batch, GAE λ = 0.95, entropy β = 0.01, advantage normalization) and compare wall-clock and episode-efficiency against REINFORCE on CartPole and Acrobot. Then sweep λ ∈ $\{0, 0.5, 0.9, 0.95, 1.0\}$ and plot final performance — reproduce the GAE paper's qualitative U-shape.
 
 **11.9 (implement)** Continuous control warm-up: solve `Pendulum-v1` with the A2C chassis and a Gaussian policy (network outputs mean and log-std; log-prob is a sum over action dims). Log entropy over training. You will likely observe entropy collapsing before the task is solved — apply the pitfalls section and report what fixed it. (Keep this code; Chapter 13 upgrades it to SAC.)
 
